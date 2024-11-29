@@ -1,7 +1,7 @@
 
 #Data structure to store expenses
-expense_data = {'category1' : 'amount1',
-                'category2' : 'amount2',
-                'category3' : 'amount3'}
+expense_data = {'category1' : 'individual_expense1',
+                'category2' : 'individual_expense2',
+                'category3' : 'individual_expense3'}
 
-individual_expense = ['category' , 'amount', 'description']
+individual_expense = ['date' , 'amount', 'description']
