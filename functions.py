@@ -1,20 +1,44 @@
 
 import os
 
-def add_expense():
-    """"""
+def add_expense(expense_data: dict):
+    """Adds expenses to the corresponding file.
+    
+    Parameter
+    ---------
+    expense_data : set of data corresponding to the expenses (dict)
 
-def view_all_expenses():
-    """"""
+    """
 
-def view_expenses_by_category():
-    """"""
+def view_all_expenses(expense_data: dict):
+    """Shows a complete view of all the expenses in the file.
+    
+    Parameter
+    ---------
+    expense_data : set of data corresponding to the expenses (dict)
+    
+    """
 
-def calculate_expenses():
-    """"""
+def view_expenses_by_category(expense_data: dict):
+    """Shows a view of all the expenses in the file by category.
+    
+    Parameter
+    ---------
+    expense_data : set of data corresponding to the expenses (dict)
+
+    """
+
+def calculate_expenses(expense_data: dict):
+    """Calculates all the expenses per month.
+    
+    Parameter
+    ---------
+    expense_data : set of data corresponding to the expenses (dict)
+    
+    """
 
 def load_file(path: str):
-    """Load or create the expenses file.
+    """Loads or creates the expenses file.
     
     Parameter
     ---------
@@ -44,11 +68,20 @@ def load_file(path: str):
         #Convert amount into float
         for item in expense_data[category]:
             item[1] = float(item[1])
-    
+    file.close()
     return expense_data
 
-def save_file():
-    """"""
+def save_file(expense_data: dict, file_name: str):
+    """Saves all the expenses into the corresponding file.
+    
+    Parameters
+    ----------
+    expense_data : set of data corresponding to the expenses (dict)
+    file_name    : name of file containing the expenses (str)
+    
+    """
 
 def show_menu():
-    """"""
+    """Shows the set of command that the user can use.
+    
+    """
