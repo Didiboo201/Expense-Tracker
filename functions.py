@@ -9,6 +9,16 @@ def add_expense(expense_data: dict):
     expense_data : set of data corresponding to the expenses (dict)
 
     """
+    category = input("Enter the category here! ")
+    amount = float(input("Enter the amount here! "))
+    description = input("Enter the description here! ")
+    date = input("Enter the date (YYYY-MM-DD) here! ")
+
+    if category not in expense_data:
+        expense_data[category] = []
+    else:
+        expense_data[category].append([date, amount, description])
+    print("Expense added!")
 
 def view_all_expenses(expense_data: dict):
     """Shows a complete view of all the expenses in the file.
