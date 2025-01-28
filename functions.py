@@ -46,9 +46,8 @@ def load_file(path: str):
     
     """
     if not os.path.exists(path):
-        #create file
         file = open('expenses.txt', 'w')
-        #create empty dict
+
         expense_data = {}
 
         file.close()
@@ -71,15 +70,20 @@ def load_file(path: str):
     file.close()
     return expense_data
 
-def save_file(expense_data: dict, file_name: str):
+def save_file(expense_data: dict):
     """Saves all the expenses into the corresponding file.
     
     Parameters
     ----------
     expense_data : set of data corresponding to the expenses (dict)
-    file_name    : name of file containing the expenses (str)
     
     """
+    file = open('expenses.txt', 'w')
+    for category, items in expense_data.items():
+        line = category + "|" + "|".join(",".join(map(str, item)) for item in items)
+        file.write(line + "\n")
+    file.close()
+
 
 def show_menu():
     """Shows the set of command that the user can use.
