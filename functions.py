@@ -55,13 +55,17 @@ def view_expenses_by_category(expense_data: dict):
 
 
 def calculate_expenses(expense_data: dict):
-    """Calculates all the expenses per month.
+    """Calculates all the expenses.
     
     Parameter
     ---------
     expense_data : set of data corresponding to the expenses (dict)
     
     """
+    total = 0
+    for items in expense_data.values():
+        total += sum(item[1] for item in items)
+    print(f"Total expenses: ${total}:.2f")
 
 def load_file(path: str):
     """Loads or creates the expenses file.
