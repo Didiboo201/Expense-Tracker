@@ -44,6 +44,15 @@ def view_expenses_by_category(expense_data: dict):
     expense_data : set of data corresponding to the expenses (dict)
 
     """
+    category = input("Enter the category: ")
+
+    if category in expense_data:
+        print(f"\nCategory : {category}")
+        for item in expense_data[category]:
+            print(f"Date: {item[0]}, Amount: ${item[1]:.2f}, Description: {item[2]}")
+    else:
+        print("This category doesn't exist yet!")
+
 
 def calculate_expenses(expense_data: dict):
     """Calculates all the expenses per month.
