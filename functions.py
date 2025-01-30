@@ -113,9 +113,3 @@ def save_file(expense_data: dict):
         line = category + "|" + "|".join(",".join(map(str, item)) for item in items)
         file.write(line + "\n")
     file.close()
-
-
-def show_menu():
-    """Shows the set of command that the user can use.
-    
-    """
