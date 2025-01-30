@@ -16,8 +16,8 @@ def add_expense(expense_data: dict):
 
     if category not in expense_data:
         expense_data[category] = []
-    else:
-        expense_data[category].append([date, amount, description])
+
+    expense_data[category].append([date, amount, description])
     print("Expense added!")
 
 def view_all_expenses(expense_data: dict):
@@ -28,6 +28,13 @@ def view_all_expenses(expense_data: dict):
     expense_data : set of data corresponding to the expenses (dict)
     
     """
+    if expense_data == {}:
+        return "There is no expenses yet!"
+    
+    for category, items in expense_data.items():
+        print(f"\nCategory : {category}")
+        for item in items:
+            print(f"Date: {item[0]}, Amount: ${item[1]:.2f}, Description: {item[2]}") 
 
 def view_expenses_by_category(expense_data: dict):
     """Shows a view of all the expenses in the file by category.
